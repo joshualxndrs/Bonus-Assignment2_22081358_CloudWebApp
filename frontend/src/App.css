@@ -165,3 +165,24 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
+.title_contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    margin-bottom: 15px; 
+    gap: 5px; 
+}
+.title_contact h3 {
+    margin: 0; 
+    font-size: 22px; 
+    font-weight: 600; 
+    color: #333;
+}
+.title_contact p {
+    margin: 0; 
+    font-size: 14px; 
+    font-style: italic;
+    color: #555;
+}

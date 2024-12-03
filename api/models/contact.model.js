@@ -8,6 +8,10 @@ module.exports = (sequelize, Sequelize) => {
         name: {
             type: Sequelize.STRING
         },
+        address: {
+            type: Sequelize.STRING, // Add the address field
+            allowNull: true,        
+        },
     });
 
     return Contact;

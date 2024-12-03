@@ -15,8 +15,8 @@ function Phone(props) {
 
 	return (
 		<tr>
-            <td>{ phone.name }</td>
-            <td>{ phone.number }</td>
+            <td>{ phone.PhoneType }</td>
+            <td>{ phone.PhoneNumber }</td>
             <td style={
                 {
                     width: '14px',
