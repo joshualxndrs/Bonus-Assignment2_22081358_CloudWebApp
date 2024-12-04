@@ -53,4 +53,5 @@ This project implements a cloud-based web application integrating a React front-
 
 ## TASK 5 DOCUMENTATION
 "FRONTEND VIEW OF TASK 5"
+<br>
 ![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_5/FRONTEND_TASK5.png)
