@@ -186,3 +186,34 @@
     font-style: italic;
     color: #555;
 }
+
+
+.company-list {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.company {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+}
+
+.company h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.company p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.new-company {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}

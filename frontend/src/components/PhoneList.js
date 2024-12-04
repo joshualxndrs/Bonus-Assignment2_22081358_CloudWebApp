@@ -2,9 +2,9 @@ import Phone from './Phone.js';
 import NewPhone from './NewPhone.js';
 
 function PhoneList(props) {
-    const {contact, phones, setPhones} = props;
+    const { contact, phones = [], setPhones } = props; // Fallback to an empty array
 
-	return (
+    return (
         <div className='phone-list'>
             <NewPhone phones={phones} setPhones={setPhones} contact={contact} />
 
@@ -17,17 +17,27 @@ function PhoneList(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        phones.map((phone) => {
-                            return (
-                                <Phone key={phone.id} phone={phone} phones={phones} setPhones={setPhones} contact={contact} />
-                            );
-                        })
-                    }
+                    {phones.length > 0 ? (
+                        phones.map((phone) => (
+                            <Phone
+                                key={phone.id}
+                                phone={phone}
+                                phones={phones}
+                                setPhones={setPhones}
+                                contact={contact}
+                            />
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="3" style={{ textAlign: 'center' }}>
+                                No phones available
+                            </td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </div>
-	);
+    );
 }
 
 export default PhoneList;
