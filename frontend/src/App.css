@@ -2,7 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contact {
+.asset {
     border-width: 2px;
     border-style: solid;
     border-radius: 5px;
@@ -15,17 +15,17 @@
     flex-direction: column;
     align-items: center;
 }
-.contact:hover {
+.asset:hover {
     background-color: #E0E0E0;
 }
-.contact > .title {
+.asset > .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-.contact > .title > h3 {
+.asset > .title > h3 {
     margin: 0px;
     text-align: center;
 }
@@ -69,7 +69,7 @@
     color: gray;
 }
 
-.contact-list {
+.asset-list {
     border-width: 2px;
     border-style: solid;
     border-color: black;
@@ -81,62 +81,62 @@
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-.contact-list > h2 {
+.asset-list > h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
 }
 
-.new-contact {
+.new-asset {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.new-contact > input {
+.new-asset > input {
     margin-bottom: 8px;
 }
 
-.phone-list {
+.category-list {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.phone-list > table {
+.category-list > table {
     margin-top: 10px;
 }
-.phone-list > table > thead > tr > th {
+.category-list > table > thead > tr > th {
     padding: 5px;
 }
-.phone-list > table > tbody > tr > td {
+.category-list > table > tbody > tr > td {
     padding: 5px;
 }
 
-.phone-list > table {
+.category-list > table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-.phone-list > table td, .phone-list > table th {
+.category-list > table td, .phone-list > table th {
     border: 1px solid #b1b1b1;
     padding: 8px;
 }
 
-.phone-list > table th {
+.category-list > table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
 }
 
-.new-phone {
+.new-category {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.new-phone > input {
+.new-category > input {
     margin-right: 5px;
     width: 100%;
 }
@@ -167,20 +167,20 @@
 }
 
 
-.title_contact {
+.title_asset {
     display: flex;
     flex-direction: column;
     justify-content: center; 
     margin-bottom: 15px; 
     gap: 5px; 
 }
-.title_contact h3 {
+.title_asset h3 {
     margin: 0; 
     font-size: 22px; 
     font-weight: 600; 
     color: #333;
 }
-.title_contact p {
+.title_asset p {
     margin: 0; 
     font-size: 14px; 
     font-style: italic;
@@ -188,7 +188,7 @@
 }
 
 
-.company-list {
+.vendor-list {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #b1b1b1;
@@ -196,23 +196,23 @@
     background-color: #f9f9f9;
 }
 
-.company {
+.vendor {
     border-bottom: 1px solid #e0e0e0;
     padding: 10px;
 }
 
-.company h4 {
+.vendor h4 {
     margin: 0;
     font-size: 18px;
 }
 
-.company p {
+.vendor p {
     margin: 5px 0;
     font-size: 14px;
     color: #555;
 }
 
-.new-company {
+.new-vendor {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';  // import useEffect
-import ContactList from './components/ContactList';
+import AssetList from './components/AssetList'; // import AssetList';
 import Stats from './components/Stats';
 import './App.css';
 
 function App() {
-    const [contacts, setContacts] = useState([]);
+    const [assets, setAssets] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/api/contacts')
+        fetch('http://localhost/api/assets')
             .then(response => response.json())
-            .then(data => setContacts(data))
+            .then(data => setAssets(data))
             .catch((error) => {
                 console.error('Error:', error);
             });
@@ -17,9 +17,9 @@ function App() {
 
     return (
         <div className='page'>
-            <h1>Contactor</h1>
-            <ContactList contacts={contacts} setContacts={setContacts} />
-            <p>Click a contact to view associated phone numbers</p>
+            <h1>Asset Database</h1>
+            <AssetList assets={assets} setAssets={setAssets} />
+            <p>Click an Asset to view associated details</p>
             <Stats />
         </div>
     );

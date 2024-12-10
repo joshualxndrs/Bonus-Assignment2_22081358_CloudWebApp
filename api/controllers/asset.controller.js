@@ -1,17 +1,17 @@
 const db = require("../models");
-const Contacts = db.contacts;
-const Phones = db.phones;
+const Assets = db.assets;
+const Categories = db.categories;
 const Op = db.Sequelize.Op;
 
-// Create contact
+// Create asset
 exports.create = (req, res) => {
     
-    const contact = {
+    const asset = {
         name: req.body.name,
-        address: req.body.address,
+        description: req.body.description,
     };
 
-    Contacts.create(contact)
+    Assets.create(asset)
         .then(data => {
             res.send(data);
         })
@@ -23,9 +23,9 @@ exports.create = (req, res) => {
         });
 };
 
-// Get all contacts
+// Get all assets
 exports.findAll = (req, res) => {
-    Contacts.findAll()
+    Assets.findAll()
         .then(data => {
             res.send(data);
         })
@@ -36,72 +36,72 @@ exports.findAll = (req, res) => {
         });
 };
 
-// Get one contact by id
+// Get one asset by id
 exports.findOne = (req, res) => {
-    const id = req.params.contactId;
+    const id = req.params.assetId;
 
-    Contacts.findByPk(id)
+    Assets.findByPk(id)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Contact with id=" + id
+                message: "Error retrieving asset with id=" + id
             });
         }
     );
 };
 
-// Update one contact by id
+// Update one asset by id
 exports.update = (req, res) => {
-    const id = req.params.contactId;
+    const id = req.params.assetId;
 
-    Contacts.update(req.body, {
+    Assets.update(req.body, {
         where: { id: id }
     })
     .then(num => {
         if (num == 1) {
             res.send({
-                message: "Contact was updated successfully."
+                message: "Asset was updated successfully."
             });
         } else {
             res.send({
-                message: `Cannot update Contact`
+                message: `Cannot update Asset`
             });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Error updating Contact with id=" + id
+            message: "Error updating Asset with id=" + id
         });
     });
 };
 
-// Delete one contact by id
+// Delete one asset by id
 exports.delete = (req, res) => {
-    const id = parseInt(req.params.contactId);
+    const id = parseInt(req.params.assetId);
 
-    Phones.destroy({
-        where: { contactId: id }
+    Categories.destroy({
+        where: { assetId: id }
     })
     .then(num => {
-        Contacts.destroy({
+        Assets.destroy({
             where: { id: id }
         })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Contact was deleted successfully!"
+                    message: "Asset was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Contact`
+                    message: `Cannot delete Asset`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Contact with id=" + id
+                message: "Could not delete Asset with id=" + id
             });
         });
     });

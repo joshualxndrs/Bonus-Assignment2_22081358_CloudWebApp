@@ -1,48 +1,48 @@
 import { useState } from "react";
 
-function Company(props) {
-    const { company, companies, setCompanies, contact } = props;
+function Vendor(props) {
+    const { vendor, vendors, setVendors, asset } = props;
     const [isEditing, setIsEditing] = useState(false);
-    const [companyName, setCompanyName] = useState(company.company_name);
-    const [companyAddress, setCompanyAddress] = useState(company.company_address);
+    const [vendorName, setvendorName] = useState(vendor.vendor_name);
+    const [vendorAddress, setvendorAddress] = useState(vendor.vendor_address);
 
-    async function deleteCompany() {
+    async function deletevendor() {
         const response = await fetch(
-            `http://localhost/api/contacts/${contact.id}/companies/${company.company_id}`,
+            `http://localhost/api/assets/${asset.id}/vendors/${vendor.id}`,
             {
                 method: "DELETE",
             }
         );
 
         if (response.ok) {
-            const updatedCompanies = companies.filter((c) => c.company_id !== company.company_id);
-            setCompanies([...updatedCompanies]);
+            const updatedVendors = vendors.filter((c) => c.vendor_id !== vendor.vendor_id);
+            setVendors([...updatedVendors]);
         }
     }
 
-    async function updateCompany(e) {
+    async function updatevendor(e) {
         e.preventDefault();
 
         const response = await fetch(
-            `http://localhost/api/contacts/${contact.id}/companies/${company.company_id}`,
+            `http://localhost/api/assets/${asset.id}/vendors/${vendor.vendor_id}`,
             {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    company_name: companyName,
-                    company_address: companyAddress,
+                    vendor_name: vendorName,
+                    vendor_address: vendorAddress,
                 }),
             }
         );
 
         if (response.ok) {
-            const updatedCompany = await response.json();
-            const updatedCompanies = companies.map((c) =>
-                c.company_id === company.company_id ? updatedCompany : c
+            const updatedvendor = await response.json();
+            const updatedVendors = vendors.map((c) =>
+                c.vendor_id === vendor.vendor_id ? updatedvendor : c
             );
-            setCompanies([...updatedCompanies]);
+            setVendors([...updatedVendors]);
             setIsEditing(false);
         }
     }
@@ -56,16 +56,16 @@ function Company(props) {
                     <td>
                         <input
                             type="text"
-                            value={companyName}
-                            onChange={(e) => setCompanyName(e.target.value)}
+                            value={vendorName}
+                            onChange={(e) => setvendorName(e.target.value)}
                             onClick={(e) => e.stopPropagation()} // Prevent propagation for input
                         />
                     </td>
                     <td>
                         <input
                             type="text"
-                            value={companyAddress}
-                            onChange={(e) => setCompanyAddress(e.target.value)}
+                            value={vendorAddress}
+                            onChange={(e) => setvendorAddress(e.target.value)}
                             onClick={(e) => e.stopPropagation()} // Prevent propagation for input
                         />
                     </td>
@@ -74,7 +74,7 @@ function Company(props) {
                             className="button green"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                updateCompany(e);
+                                updatevendor(e);
                             }}
                         >
                             Save
@@ -92,8 +92,8 @@ function Company(props) {
                 </>
             ) : (
                 <>
-                    <td>{company.company_name}</td>
-                    <td>{company.company_address}</td>
+                    <td>{vendor.vendor_name}</td>
+                    <td>{vendor.vendor_address}</td>
                     <td>
                         <button
                             className="button blue"
@@ -108,7 +108,7 @@ function Company(props) {
                             className="button red"
                             onClick={(e) => {
                                 e.stopPropagation();
-                                deleteCompany();
+                                deletevendor();
                             }}
                         >
                             Delete
@@ -120,4 +120,4 @@ function Company(props) {
     );
 }
 
-export default Company;
+export default Vendor;

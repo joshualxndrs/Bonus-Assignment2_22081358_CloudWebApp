@@ -1,27 +1,27 @@
 module.exports = (sequelize, Sequelize) => {
-    const Company = sequelize.define("company", {
-        company_id: {
+    const Vendor = sequelize.define("vendor", {
+        vendor_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        company_name: {
+        vendor_name: {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        company_address: {
+        vendor_address: {
             type: Sequelize.STRING,
             allowNull: true,
         },
-        contact_id: {
+        asset_id: {
             type: Sequelize.INTEGER,
             references: {
-                model: 'contacts', // Foreign key references contacts table
+                model: 'assets', // Foreign key references contacts table
                 key: 'id',
             },
             onDelete: "CASCADE",
         },
     });
 
-    return Company;
+    return Vendor;
 };

@@ -1,24 +1,24 @@
 module.exports = (sequelize, Sequelize) => {
-    const Phone = sequelize.define("phone", {
+    const Category = sequelize.define("category", {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        PhoneType: { // Update the name to phone_type
+        CategoryType: { // Update the name to phone_type
             type: Sequelize.STRING
         },
-        PhoneNumber: { // Update the name to phone_number
+        CategoryNumber: { // Update the name to phone_number
             type: Sequelize.STRING
         },
-        contactId: {
+        assetId: {
             type: Sequelize.INTEGER,
             references: {
-                model: 'contacts',
+                model: 'assets',
                 key: 'id',
             }
         }
     });
 
-    return Phone;
+    return Category;
 };

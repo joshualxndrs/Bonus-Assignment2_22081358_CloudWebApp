@@ -1,16 +1,16 @@
 const db = require("../models");
-const Phones = db.phones;
+const Categories = db.categories;
 const Op = db.Sequelize.Op;
 
-// Create phone
+// Create category
 exports.create = (req, res) => {
-    const phone = {
-        PhoneType: req.body.PhoneType,
-        PhoneNumber: req.body.PhoneNumber,
-        contactId: parseInt(req.params.contactId)
+    const category = {
+        CategoryType: req.body.CategoryType,
+        CategoryNumber: req.body.CategoryNumber,
+        assetId: parseInt(req.params.assetId)
     };
 
-    Phones.create(phone)
+    Categories.create(category)
         .then(data => {
             res.send(data);
         })
@@ -22,12 +22,12 @@ exports.create = (req, res) => {
         });
 };
 
-// Get all phones
+// Get all categories
 exports.findAll = (req, res) => {
 
-    Phones.findAll({
+    Categories.findAll({
         where: {
-            contactId: parseInt(req.params.contactId)
+            assetId: parseInt(req.params.assetId)
         }
     })
         .then(data => {
@@ -40,12 +40,12 @@ exports.findAll = (req, res) => {
         });
 };
 
-// Get one phone by id
+// Get one category by id
 exports.findOne = (req, res) => {
-    Phones.findOne({
+    Categories.findOne({
         where: {
-            contactId: req.params.contactId,
-            id: req.params.phoneId
+            assetId: req.params.assetId,
+            id: req.params.categoryId
         }
     })
         .then(data => {
@@ -58,52 +58,52 @@ exports.findOne = (req, res) => {
         });
 };
 
-// Update one phone by id
+// Update one category by id
 exports.update = (req, res) => {
-    const id = req.params.phoneId;
+    const id = req.params.categoryId;
 
-    Phones.update(req.body, {
-        where: { id: id, contactId: req.params.contactId }
+    Categories.update(req.body, {
+        where: { id: id, assetId: req.params.assetId }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was updated successfully."
+                    message: "Category was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Phone`
+                    message: `Cannot update Category`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Phone with id=" + id
+                message: "Error updating Category with id=" + id
             });
         });
 };
 
-// Delete one phone by id
+// Delete one category by id
 exports.delete = (req, res) => {
-    const id = req.params.phoneId;
+    const id = req.params.categoryId;
 
-    Phones.destroy({
-        where: { id: id, contactId: req.params.contactId }
+    Categories.destroy({
+        where: { id: id, assetId: req.params.assetId }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was deleted successfully!"
+                    message: "Category was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Phone`
+                    message: `Cannot delete Category`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Phone with id=" + id
+                message: "Could not delete Category with id=" + id
             });
         });
 };

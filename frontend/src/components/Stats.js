@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 function Stats() {
     const [expanded, setExpanded] = useState(false);
-    const [totalContacts, setTotalContacts] = useState(0);
-    const [totalPhones, setTotalPhones] = useState(0);
-    const [lastUpdatedContact, setLastUpdatedContact] = useState('');
-    const [oldestContact, setOldestContact] = useState('');
-    const [totalCompanies, setTotalCompanies] = useState(0); // New state for total companies
+    const [totalAssets, setTotalAssets] = useState(0);
+    const [totalCategories, setTotalCategories] = useState(0);
+    const [lastUpdatedAsset, setLastUpdatedAsset] = useState('');
+    const [oldestAsset, setOldestAsset] = useState('');
+    const [totalVendors, setTotalVendors] = useState(0); // New state for total companies
     const [loading, setLoading] = useState(false); 
     const [error, setError] = useState(null); 
 
@@ -24,11 +24,11 @@ function Stats() {
             const data = await response.json();
 
             // Set all states from the response
-            setTotalContacts(data.totalContacts || 0);
-            setTotalPhones(data.totalPhones || 0);
-            setLastUpdatedContact(data.lastUpdatedContact || 'N/A');
-            setOldestContact(data.oldestContact || 'N/A');
-            setTotalCompanies(data.totalCompanies || 0); // Set total companies
+            setTotalAssets(data.totalAssets || 0);
+            setTotalCategories(data.totalCategories || 0);
+            setLastUpdatedAsset(data.lastUpdatedAsset || 'N/A');
+            setOldestAsset(data.oldestAsset || 'N/A');
+            setTotalVendors(data.totalVendors || 0); // Set total companies
         } catch (error) {
             console.error('Error fetching stats:', error);
             setError('Failed to fetch stats. Please try again.');
@@ -56,11 +56,11 @@ function Stats() {
                         <p className="error">{error}</p>
                     ) : (
                         <>
-                            <p><b>Number of Contacts:</b> {totalContacts}</p>
-                            <p><b>Number of Phones:</b> {totalPhones}</p>
-                            <p><b>Newest Contact Timestamp:</b> {lastUpdatedContact}</p>
-                            <p><b>Oldest Contact Timestamp:</b> {oldestContact}</p>
-                            <p><b>Number of Companies:</b> {totalCompanies}</p>
+                            <p><b>Number of Assets:</b> {totalAssets}</p>
+                            <p><b>Number of Categories:</b> {totalCategories}</p>
+                            <p><b>Newest Asset Timestamp:</b> {lastUpdatedAsset}</p>
+                            <p><b>Oldest Asset Timestamp:</b> {oldestAsset}</p>
+                            <p><b>Number of Vendors:</b> {totalVendors}</p>
                         </>
                     )}
                     <br />
