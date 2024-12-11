@@ -3,7 +3,7 @@ import { useState } from 'react';
 function NewCategory(props) {
     const {asset, categories, setCategories} = props;
     const [CategoryNumber, set_category_number] = useState('');
-    const [CategoryType, set_category_type] = useState('family');
+    const [CategoryType, set_category_type] = useState('Office');
 
     async function createCategory(e) {
         e.preventDefault();
@@ -26,7 +26,7 @@ function NewCategory(props) {
         }
 
         set_category_number('');
-        set_category_type('family');
+        set_category_type('Office');
     }
 
 	return (
