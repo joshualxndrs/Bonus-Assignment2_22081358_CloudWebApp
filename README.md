@@ -5,53 +5,40 @@ Please include your shared repository link here: https://github.com/joshualxndrs
 ## PROJECT OVERVIEW
 This project implements a cloud-based web application integrating a React front-end, a Node.js backend, and a PostgreSQL database. It provides functionality for managing contacts, phones, and companies, including creating, updating, and deleting records through an intuitive user interface while ensuring seamless data synchronization with the backend APIs.
 
-## TASK 2 DOCUMENTATION
-1. “GET Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/GET_CONTACTS.png)
-2. “POST Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/POST_CONTACTS.png)
-3. “DELETE Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/DELETE_CONTACTS.png)
-4. “PUT Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/PUT_CONTACT.png)
-5. “GET Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/GET_PHONES.png)
-6. “POST Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/POST_PHONES.png)
-7. “DELETE Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/DELETE_PHONES.png)
-8. “PUT Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_2/PUT_PHONES.png)
+## Task 6 - Changes Made
+In this iteration, we expanded the previous contact management app into an Asset Management System with the following updates:
+- **Database Enhancements**: Added `Assets`, `Categories`, and `Vendors` tables with relational associations (one-to-many relationships).
+- **API Updates**: Created endpoints for managing assets, categories, and vendors with full CRUD functionality.
+- **Frontend Improvements**:
+  - Added scrollable containers for better navigation and dynamic updates.
+  - Implemented a sticky "Add Asset" section for easier user access.
+  - Displayed categories and vendors in structured tables for clarity.
+- **UI/UX Enhancements**: Polished styling, improved layout responsiveness, and maintained consistent user experience.
 
-## TASK 3 DOCUMENTATION
-1. “GET Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/GET_CONTACTS.png)
-2. “POST Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/POST_CONTACTS.png)
-3. “DELETE Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/DELETE_CONTACTS.png)
-4. “PUT Contact” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/PUT_CONTACTS.png)
-5. “GET Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/GET_PHONES.png)
-6. “POST Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/POST_PHONES.png)
-7. “DELETE Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/DELETE_PHONES.png)
-8. “PUT Phone” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_3/PUT_PHONES.png)
+## Task 6 - Challenges Encountered
+- **Database Relationships**: Setting up and testing foreign key constraints between assets, categories, and vendors.
+- **Frontend Alignment**: Ensuring the layout remains visually consistent while handling larger datasets.
+- **API Testing**: Verifying CRUD operations across relational tables with proper error handling and cascading deletions.
 
-## TASK 4 DOCUMENTATION
-1. “GET Companies” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_4/GET_COMPANIES.png)
-2. “POST Companies” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_4/POST_COMPANIES.png)
-3. “DELETE Companies” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_4/DELETE_COMPANIES.png)
-4. “PUT Companies” output:
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_4/PUT_COMPANIES.png)
+This iteration showcases the scalability and adaptability of the application while emphasizing functionality and user experience.
 
-## TASK 5 DOCUMENTATION
-"FRONTEND VIEW OF TASK 5"
+## TASK 6 API DOCUMENTATION
+1. POST and GET "Assets" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/POST-GET_Assets.png)
+2. PUT and DELETE "Assets" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/PUT-DELETE_Assets.png)
+3. POST and GET "Categories" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/POST-GET_Categories.png)
+4. PUT and DELETE "Categories" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/PUTE-DELETE_Categories.png)
+5. POST and GET "Vendors" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/POST-GET_Vendors.png)
+6. PUT and DELETE "Vendors" output:
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_API/PUT-DELETE_Vendors.png)
+
+## TASK 6 FRONTEND DOCUMENTATION
+"FRONTEND VIEW OF TASK 6"
 <br>
-![alt text](https://github.com/joshualxndrs/Assignment2_22081358_CloudWebApp/blob/main/TASK_5/FRONTEND_TASK5.png)
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_FRONTEND/Image1.png)
+<br>
+![alt text](https://github.com/joshualxndrs/Bonus-Assignment2_22081358_CloudWebApp/blob/main/TASK6_FRONTEND/Image2.png)
